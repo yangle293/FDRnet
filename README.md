@@ -9,7 +9,7 @@ The setup process for FDRnet requires the following steps:
 
 Download FDRnet. The following command clones the current FDRnet repository from GitHub:
 
-`git clone https://github.com/raphael-group/hierarchical-hotnet.git`
+`git clone https://github.com/yangle293/FDRnet.git`
 
 ### Installation
 
@@ -36,7 +36,7 @@ The following software is required for FDRnet.
 ## Additional information
 
 ### Examples
-
+`python src/FDRnet_main.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl example/BRCA_fdr.txt -ofn test.csv -se PSMB3`
 ### Support
 
 ### License
