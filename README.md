@@ -36,7 +36,9 @@ The following software is required for FDRnet.
 ## Additional information
 
 ### Examples
-`python src/FDRnet_main.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl example/BRCA_fdr.txt -ofn test.csv -se PSMB3`
+`python src/FDRnet_main.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl example/BRCA_fdr.txt -ofn example/test.csv -se PSMB3`
+
+![alt text](https://github.com/yangle293/FDRnet/blob/master/example/seed_PSMB3.png)
 ### Support
 
 ### License
