@@ -91,7 +91,9 @@ The output file is a .csv file organized as follows:
     -esr           Whether to remove the subnetwork when its seed is on the edge, default 1
     
 ### Examples
-We provide three files in the `example` directory as an example. 
+We provide three files in the `example` directory as an example: index-to-gene file `irefindex_index_gene` and edge list file `irefindex_edge_list` of iRefIndex9.0 PPI network and a local FDR score file calculated by TCGA breast cancer cohort `BRCA_fdr.txt`. 
+
+We can identified the subnetwork around PSMB3 gene by running the code:
 
     python src/FDRnet_main.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl example/BRCA_fdr.txt -ofn example/test.csv -se PSMB3
 
@@ -109,9 +111,9 @@ We can see the subnetwork around PSMB3:
 ![alt text](https://github.com/yangle293/FDRnet/blob/master/example/seed_PSMB3.png)
 ## Additional information
 ### Support
-For support with Hierarchical HotNet, please
+Please open an issue if you met any problem in using FDRnet.
 ### License
 See `LICENSE.txt` for license information.
 ### Citation
 If you use FDRnet in your work, then please cite the following manuscript:
-L. Yang, R. Chen, S. Goodison, Y. Sun. FDRnet:  A Novel Method to Identify SignificantlyMutated Subnetworks in Cancer.
+L. Yang, R. Chen, S. Goodison, Y. Sun. FDRnet:  A novel method to identify significantly mutated subnetworks in cancer.
