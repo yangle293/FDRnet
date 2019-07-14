@@ -44,7 +44,7 @@ We also provide a simple program `plot_subnetworks.py` to visualize the identifi
 
 `python src/plot_subnetworks.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl example/BRCA_fdr.txt -ofn example/test.csv`
 
-The subnetwork around PSMB3 is as follows:
+We can see the subnetwork around PSMB3:
 ![alt text](https://github.com/yangle293/FDRnet/blob/master/example/seed_PSMB3.png)
 ### Support
 
