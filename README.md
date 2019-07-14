@@ -36,9 +36,11 @@ The following software is required for FDRnet.
 ## Additional information
 
 ### Examples
+We provide three files in the `example` directory as an example. 
+
 `python src/FDRnet_main.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl example/BRCA_fdr.txt -ofn example/test.csv -se PSMB3`
 
-We also provide a simple program to visualize the identified subnetwork:
+We also provide a simple program `plot_subnetworks.py` to visualize the identified subnetwork. The input is the three files in the `example` directory and the output file from above. For example, run the code below:
 
 `python src/plot_subnetworks.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl example/BRCA_fdr.txt -ofn example/test.csv`
 
