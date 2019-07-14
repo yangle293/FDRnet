@@ -91,7 +91,7 @@ The output file is a .csv file organized as follows:
     -esr           Whether to remove the subnetwork when its seed is on the edge, default 1
     
 ### Examples
-We provide three files in the `example` directory as an example: index-to-gene file `irefindex_index_gene` and edge list file `irefindex_edge_list` of iRefIndex9.0 PPI network and a local FDR score file calculated by TCGA breast cancer cohort `BRCA_fdr.txt`. 
+We provide three files in the `example` directory: an index-to-gene file `irefindex9_index_gene` and an edge list file `irefindex9_edge_list` of the iRefIndex9.0 PPI network and a gene-to-score file calculated from TCGA breast cancer data `BRCA_fdr.txt`. 
 
 We can identified the subnetwork around PSMB3 gene by running the code:
 
@@ -103,11 +103,11 @@ The output file should be:
 |:-------:|:-------:|:-----:|:------:|
 | PSMB3	|4.573695183	| MIP_optimal	|PSMD11 PSMD12 GFPT2 CDC6 PSMD3 PSMC4 PSMC5 VDAC3 PSMA7 PSMB4 PSMB3|
 
-We also provide a simple program `plot_subnetworks.py` to visualize the identified subnetwork. The input is the three files in the `example` directory and the output file from above. For example, run the code below:
+We also provide a simple script `plot_subnetworks.py` to visualize the identified subnetwork. The input is the three files in the `example` directory and the output file from above. For example, we can visualize the subnetwork around PSMB3 by running the code:
 
-    python src/plot_subnetworks.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl        example/BRCA_fdr.txt -ofn example/test.csv
+    python src/plot_subnetworks.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl     example/BRCA_fdr.txt -ofn example/test.csv
 
-We can see the subnetwork around PSMB3:
+The result should be:
 ![alt text](https://github.com/yangle293/FDRnet/blob/master/example/seed_PSMB3.png)
 ## Additional information
 ### Support
