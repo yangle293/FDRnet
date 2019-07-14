@@ -88,7 +88,7 @@ The output file is a .csv file organized as follows:
     -esr           Whether to remove the subnetwork when its seed is on the edge, default 1
     
 ### Examples
-We provide three files in the `example` directory: an index-to-gene file `irefindex9_index_gene` and an edge list file `irefindex9_edge_list` of the iRefIndex9.0 PPI network and a gene-to-score file calculated from TCGA breast cancer data `BRCA_fdr.txt`. 
+We provide three files in the `example` directory: an index-to-gene file `irefindex9_index_gene` and an edge list file `irefindex9_edge_list` of the iRefIndex9.0 PPI network and a gene-to-score file `BRCA_fdr.txt` calculated from TCGA breast cancer data. 
 
 We can identified the subnetwork around PSMB3 gene by running the code:
 
