@@ -86,12 +86,10 @@ The output file is a .csv file organized as follows:
     -bd            FDR bound, default 0.1
     -al            Random walk parameter, default 0.85
     -sz            Local graph size, default 400
-    -tl            Time limit for each seed in MILP problem
-    -rg            Relative gap in MILP problem
-    -esr           Whether to remove the subnetwork when its seed is on the edge
+    -tl            Time limit for each seed in MILP problem, default 100
+    -rg            Relative gap in MILP problem, default 0.01
+    -esr           Whether to remove the subnetwork when its seed is on the edge, default 1
     
-## Additional information
-
 ### Examples
 We provide three files in the `example` directory as an example. 
 
@@ -109,6 +107,7 @@ We also provide a simple program `plot_subnetworks.py` to visualize the identifi
 
 We can see the subnetwork around PSMB3:
 ![alt text](https://github.com/yangle293/FDRnet/blob/master/example/seed_PSMB3.png)
+## Additional information
 ### Support
 For support with Hierarchical HotNet, please
 ### License
