@@ -17,10 +17,19 @@ The following software is required for FDRnet.
 
 - Linux/Unix
 - [Python (2.7 or 3.5)](www.python.org)
-- NumPy (1.14)
-- Scipy (0.19)
-- NetworkX (2.0)
+- [NumPy (1.14)](https://www.numpy.org)
+- [NetworkX (2.0)](https://networkx.github.io/)
+- [Matplotlib (3.1)](https://matplotlib.org/)
 - CPLEX (12.7)
+
+#### Installing CPLEX
+Academic users can obtain a free but complete version of CPLEX via [IBM Academic Initiative](https://my15.digitalexperience.ibm.com/b73a5759-c6a6-4033-ab6b-d9d4f9a6d65b/dxsites/151914d1-03d2-48fe-97d9-d21166848e65/home).
+
+After the installation of CPLEX, you also need to install the CPLEX-Python modules. Run
+
+`cd yourCPLEXhome/python/VERSION/PLATFORM`
+
+`python setup.py install`
 
 ### Testing
 
