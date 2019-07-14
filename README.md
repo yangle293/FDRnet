@@ -27,12 +27,9 @@ Academic users can obtain a free but complete version of CPLEX via [IBM Academic
 
 After the installation of CPLEX, you also need to install the CPLEX-Python modules. Run
 
-`cd yourCPLEXhome/python/VERSION/PLATFORM`
+    cd yourCPLEXhome/python/VERSION/PLATFORM
 
-`python setup.py install`
-
-### Testing
-
+    python setup.py install
 
 ## Use
 
