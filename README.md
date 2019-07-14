@@ -39,6 +39,7 @@ The following software is required for FDRnet.
 `python src/FDRnet_main.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl example/BRCA_fdr.txt -ofn example/test.csv -se PSMB3`
 
 We also provide a simple program to visualize the identified subnetwork:
+
 `python src/plot_subnetworks.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl example/BRCA_fdr.txt -ofn example/test.csv`
 
 The subnetwork around PSMB3 is as follows:
