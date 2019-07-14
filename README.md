@@ -37,7 +37,7 @@ After the installation of CPLEX, you also need to install the CPLEX-Python modul
 ## Use
 
 ### Input
-There are three input files for Hierarchical HotNet that together define a network with scores on the nodes of the network. For example, the following example defines a network with an edge between the nodes ABC and DEF, which have scores 0.5 and 0.2, respectively. For convenience, these files use the same format as the input files for HotNet2.
+There are three input files for FDRnet that together define a network with scores on the nodes of the network. For convenience, these files use the same format as the input files for [HotNet2](https://github.com/raphael-group/hotnet2) and [hierarchical HotNet](https://github.com/raphael-group/hierarchical-hotnet). For example, the following example defines a network with an edge between the nodes ABC and DEF, which have scores 0.5 and 0.2, respectively. 
 #### Index-to-gene file
 This file associates each gene with an index, which we use for the edge list as well as a similarity matrix:
 
