@@ -95,11 +95,17 @@ The output file is a .csv file organized as follows:
 ### Examples
 We provide three files in the `example` directory as an example. 
 
-`python src/FDRnet_main.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl example/BRCA_fdr.txt -ofn example/test.csv -se PSMB3`
+    python src/FDRnet_main.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl example/BRCA_fdr.txt -ofn example/test.csv -se PSMB3
+
+The output file should be:
+
+| Seed Gene | Running time  | Optimization status | Subnetwork|
+|:-------:|:-------:|:-----:|:------:|
+| PSMB3	|4.573695183	| MIP_optimal	|PSMD11 PSMD12 GFPT2 CDC6 PSMD3 PSMC4 PSMC5 VDAC3 PSMA7 PSMB4 PSMB3|
 
 We also provide a simple program `plot_subnetworks.py` to visualize the identified subnetwork. The input is the three files in the `example` directory and the output file from above. For example, run the code below:
 
-`python src/plot_subnetworks.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl example/BRCA_fdr.txt -ofn example/test.csv`
+    python src/plot_subnetworks.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl        example/BRCA_fdr.txt -ofn example/test.csv
 
 We can see the subnetwork around PSMB3:
 ![alt text](https://github.com/yangle293/FDRnet/blob/master/example/seed_PSMB3.png)
