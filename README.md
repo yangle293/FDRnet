@@ -1,5 +1,5 @@
 # FDRnet
-
+FDRnet is an algorithm for identification of significant mutated (or differentially expressed) subnetworks. 
 
 ## Setup
 
