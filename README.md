@@ -50,15 +50,46 @@ This file defines a network using the indices in the index-to-gene file:
     1    2
     
 ##### Gene-to-score file
-This file associates each gene with a score:
+This file associates each gene with a local FDR score:
 
     ABC 0.5
     DEF 0.2
     
+If you have a p-value for each gene, we provide a wrapping function to calculate the local FDRs in `locfdr` directory using the [`locfdr`](https://github.com/leekgroup/locfdr-python) package.
 ### Running
+1. Prepare local FDRs by running `locfdr/locfdr_compute.py` script.
 
+2. Perform the FDRnet by running `src/FDRnet_main.py` script. 
+
+See `Examples` section for full minimal working examples of FDRnet.
 ### Output
+The output file is a .csv file organized as follows:
 
+    Seed Gene  Running time  Optimization status  Subnetwork
+### Usage
+
+    usage: FDRnet_main.py [-h] -igi INPUT_GENE_INDEX -iel INPUT_EDGE_LIST -igl
+                      INPUT_GENE_LFDR -ofn OUTPUT_FILE_NAME [-se SEED]
+                      [-sm SORT_METHOD] [-bd BOUND] [-al ALPHA] [-sz SIZE]
+                      [-tl TIME_LIMIT] [-rg RELATIVE_GAP]
+                      [-esr EDGE_SEED_REMOVE]
+                      
+### Optional argument
+
+    -h             show this help message and exit
+    -igi           File name of the input gene index file
+    -iel           File name of the input edge list file
+    -igl           File name of the input local FDRs file
+    -ofn           File name of output, a .csv file
+    -se            Seed gene name, 'all' or a seed gene name like PSMB3
+    -sm            Seed sort method
+    -bd            FDR bound, default 0.1
+    -al            Random walk parameter, default 0.85
+    -sz            Local graph size, default 400
+    -tl            Time limit for each seed in MILP problem
+    -rg            Relative gap in MILP problem
+    -esr           Whether to remove the subnetwork when its seed is on the edge
+    
 ## Additional information
 
 ### Examples
