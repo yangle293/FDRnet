@@ -1,5 +1,5 @@
 # FDRnet
-FDRnet is a method for identifying significantly mutated (or differentially expressed) subnetworks in human disease. 
+FDRnet is a method for identifying significantly mutated (or differentially expressed) subnetworks in human diseases. 
 
 ## Setup
 
@@ -62,7 +62,7 @@ See the `Examples` section for a full minimal working example of FDRnet.
 ### Output
 The output file is a .csv file organized as follows:
 
-    Seed Gene, Running time, Optimization status, Subnetwork
+    Seed Gene, Running Time, Optimization Status, Subnetwork
 ### Usage
 
     usage: FDRnet_main.py [-h] -igi INPUT_GENE_INDEX -iel INPUT_EDGE_LIST -igl
@@ -94,7 +94,7 @@ We can identify a subnetwork around PSMB3 gene by running the following code:
 
 The output file should be:
 
-| Seed Gene | Running time  | Optimization status | Subnetwork|
+| Seed Gene | Running Time  | Optimization Status | Subnetwork|
 |:-------:|:-------:|:-----:|:------:|
 | PSMB3	|4.573695183	| MIP_optimal	|PSMD11 PSMD12 GFPT2 CDC6 PSMD3 PSMC4 PSMC5 VDAC3 PSMA7 PSMB4 PSMB3|
 
