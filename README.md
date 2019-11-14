@@ -67,7 +67,7 @@ The output file is a .csv file organized as follows:
 
     usage: FDRnet_main.py [-h] -igi INPUT_GENE_INDEX -iel INPUT_EDGE_LIST -igl
                       INPUT_GENE_LFDR -ofn OUTPUT_FILE_NAME [-se SEED]
-                      [-sm SORT_METHOD] [-bd BOUND] [-al ALPHA] [-sz SIZE]
+                      [-bd BOUND] [-al ALPHA] [-sz SIZE]
                       [-tl TIME_LIMIT] [-rg RELATIVE_GAP]
                       
 ### Optional argument
@@ -77,8 +77,7 @@ The output file is a .csv file organized as follows:
     -iel           File name of the input edge list file
     -igl           File name of the input local FDRs file
     -ofn           File name of output, a .csv file
-    -se            Seed gene name, 'all' or a seed gene name like PSMB3
-    -sm            Seed sort method
+    -se            Seed gene name, 'all' for setting all the genes with local FDRs less than FDR bound as seeds or a specified seed gene name (e.g. TP53)
     -bd            FDR bound, default 0.1
     -al            Random walk parameter, default 0.85
     -sz            Local graph size, default 400
