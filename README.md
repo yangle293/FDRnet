@@ -69,7 +69,6 @@ The output file is a .csv file organized as follows:
                       INPUT_GENE_LFDR -ofn OUTPUT_FILE_NAME [-se SEED]
                       [-sm SORT_METHOD] [-bd BOUND] [-al ALPHA] [-sz SIZE]
                       [-tl TIME_LIMIT] [-rg RELATIVE_GAP]
-                      [-esr EDGE_SEED_REMOVE]
                       
 ### Optional argument
 
@@ -85,7 +84,6 @@ The output file is a .csv file organized as follows:
     -sz            Local graph size, default 400
     -tl            Time limit for each seed in MILP problem, default 100
     -rg            Relative gap in MILP problem, default 0.01
-    -esr           Whether to remove the subnetwork when its seed is on the edge, default 1
     
 ### Examples
 We provide three files in the `example` directory: an index-to-gene file `irefindex9_index_gene` and an edge list file `irefindex9_edge_list` of the iRefIndex9.0 PPI network and a gene-to-score file `BRCA_fdr.txt` calculated from TCGA breast cancer data. 
