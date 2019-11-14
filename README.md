@@ -109,6 +109,6 @@ The result should be:
 Please send us an email if you meet any problem in using FDRnet.
 ### License
 See `LICENSE.txt` for license information.
-### Citation
-If you use FDRnet in your work, please cite the following manuscript:
-L. Yang, R. Chen, S. Goodison, Y. Sun. FDRnet:  A novel method to identify significantly mutated subnetworks in cancer.
+<>### Citation
+<>If you use FDRnet in your work, please cite the following manuscript:
+<>L. Yang, R. Chen, S. Goodison, Y. Sun. FDRnet:  A novel method to identify significantly mutated subnetworks in cancer.
