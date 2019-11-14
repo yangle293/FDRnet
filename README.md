@@ -1,5 +1,5 @@
 # FDRnet
-FDRnet is an algorithm for identification of significantly mutated (or differentially expressed) subnetworks. 
+FDRnet is a method for identifying significantly mutated (or differentially expressed) subnetworks in human disease. 
 
 ## Setup
 
@@ -13,7 +13,7 @@ Download FDRnet. The following command clones the current FDRnet repository from
 
 ### Installation
 
-The following software is required for FDRnet.
+The following software is required for installing FDRnet:
 
 - Linux/Unix
 - [Python (2.7 or 3.5)](www.python.org)
@@ -34,35 +34,35 @@ After the installation of CPLEX, you also need to install the CPLEX-Python modul
 ## Use
 
 ### Input
-There are three input files for FDRnet that together define a network with scores on the nodes of the network. For convenience, these files use the same format as the input files for [HotNet2](https://github.com/raphael-group/hotnet2) and [hierarchical HotNet](https://github.com/raphael-group/hierarchical-hotnet). For example, the following example defines a network with an edge between the nodes ABC and DEF, which have scores 0.5 and 0.2, respectively. 
+There are three input files for FDRnet that together define a network with scores on the nodes of the network. For example, the following example defines a network with an edge between the nodes A and B, which have scores 0.5 and 0.2, respectively. 
 #### Index-to-gene file
-This file associates each gene with an index, which we use for the edge list as well as a similarity matrix:
+This file associates each gene with an index, which we use for an edge list as well as a similarity matrix:
 
-    1  ABC
-    2  DEF
+    1  A
+    2  B
     
 ##### Edge list file
-This file defines a network using the indices in the index-to-gene file:
+This file defines a network using the indices in an index-to-gene file:
 
     1    2
     
 ##### Gene-to-score file
 This file associates each gene with a local FDR score:
 
-    ABC 0.5
-    DEF 0.2
+    A 0.5
+    B 0.2
     
 If you have a p-value for each gene, we provide a wrapping function to calculate the local FDRs in `locfdr` directory using the [`locfdr`](https://github.com/leekgroup/locfdr-python) package.
 ### Running
-1. Prepare local FDRs by running `locfdr/locfdr_compute.py` script.
+1. Compute local FDRs by running `locfdr/locfdr_compute.py` script.
 
-2. Perform the FDRnet by running `src/FDRnet_main.py` script. 
+2. Run FDRnet by running `src/FDRnet_main.py` script. 
 
-See `Examples` section for full minimal working examples of FDRnet.
+See the `Examples` section for a full minimal working example of FDRnet.
 ### Output
 The output file is a .csv file organized as follows:
 
-    Seed Gene  Running time  Optimization status  Subnetwork
+    Seed Gene, Running time, Optimization status, Subnetwork
 ### Usage
 
     usage: FDRnet_main.py [-h] -igi INPUT_GENE_INDEX -iel INPUT_EDGE_LIST -igl
@@ -72,23 +72,23 @@ The output file is a .csv file organized as follows:
                       
 ### Optional argument
 
-    -h             show this help message and exit
+    -h             Show help message and exit
     -igi           File name of the input gene index file
     -iel           File name of the input edge list file
     -igl           File name of the input local FDRs file
     -ofn           File name of output, a .csv file
-    -se            Seed gene name, 'all' for setting all the genes with local FDRs less than FDR bound 
+    -se            Seed gene names, 'all' for setting all the genes with local FDRs less than FDR bound 
                       as seeds OR a specified seed gene name (e.g. TP53)
     -bd            FDR bound, default 0.1
-    -al            Random walk parameter, default 0.85
+    -al            Random-walk parameter, default 0.85
     -sz            Local graph size, default 400
     -tl            Time limit for each seed in MILP problem, default 100
     -rg            Relative gap in MILP problem, default 0.01
     
 ### Examples
-We provide three files in the `example` directory: an index-to-gene file `irefindex9_index_gene` and an edge list file `irefindex9_edge_list` of the iRefIndex9.0 PPI network and a gene-to-score file `BRCA_fdr.txt` calculated from TCGA breast cancer data. 
+We provide three files in the `example` directory: an index-to-gene file `irefindex9_index_gene`, an edge list file `irefindex9_edge_list` of the iRefIndex9.0 PPI network, and a gene-to-score file `BRCA_fdr.txt` calculated from TCGA breast cancer data. 
 
-We can identified the subnetwork around PSMB3 gene by running the code:
+We can identify a subnetwork around PSMB3 gene by running the following code:
 
     python src/FDRnet_main.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl example/BRCA_fdr.txt -ofn example/test.csv -se PSMB3
 
@@ -106,9 +106,9 @@ The result should be:
 ![alt text](https://github.com/yangle293/FDRnet/blob/master/example/seed_PSMB3.png)
 ## Additional information
 ### Support
-Please open an issue if you met any problem in using FDRnet.
+Please send us an email if you meet any problem in using FDRnet.
 ### License
 See `LICENSE.txt` for license information.
 ### Citation
-If you use FDRnet in your work, then please cite the following manuscript:
+If you use FDRnet in your work, please cite the following manuscript:
 L. Yang, R. Chen, S. Goodison, Y. Sun. FDRnet:  A novel method to identify significantly mutated subnetworks in cancer.
