@@ -78,7 +78,7 @@ The output file is a .csv file organized as follows:
     -igl           File name of the input local FDRs file
     -ofn           File name of output, a .csv file
     -se            Seed gene names, 'all' for setting all the genes with local FDRs less than FDR bound 
-                      as seeds OR a specified seed gene name (e.g. TP53)
+                      as seeds OR a specified seed gene name (e.g., TP53)
     -bd            FDR bound, default 0.1
     -al            Random-walk parameter, default 0.85
     -sz            Local graph size, default 400
