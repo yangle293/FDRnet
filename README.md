@@ -96,7 +96,7 @@ The output file should be:
 
 | Seed Gene | Running Time  | Optimization Status | Subnetwork|
 |:-------:|:-------:|:-----:|:------:|
-| PSMB3	|4.573695183	| MIP_optimal	|PSMD11 PSMD12 GFPT2 CDC6 PSMD3 PSMC4 PSMC5 VDAC3 PSMA7 PSMB4 PSMB3|
+| PSMB3	|3.27636814117	| MIP_optimal	|PSMD11 PSMD12 CDC6 PSMD3 PSMC4 PSMC5 VDAC3 PSMB4 PSMB3|
 
 We also provide a simple script `plot_subnetworks.py` to visualize the identified subnetwork. The input is the three files in the `example` directory and the output file from above. For example, we can visualize the subnetwork around PSMB3 by running the code:
 
