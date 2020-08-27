@@ -66,11 +66,11 @@ The output file is a .csv file organized as follows:
 ### Usage
 
     usage: FDRnet_main.py [-h] -igi INPUT_GENE_INDEX -iel INPUT_EDGE_LIST -igl
-                      INPUT_GENE_LFDR -ofn OUTPUT_FILE_NAME [-se SEED]
+                      INPUT_GENE_LFDR -ofn OUTPUT_FILE_NAME -se SEED
                       [-bd BOUND] [-al ALPHA] [-sz SIZE]
                       [-tl TIME_LIMIT] [-rg RELATIVE_GAP]
                       
-### Optional argument
+### Program argument
 
     -h             Show help message and exit
     -igi           File name of the input gene index file
