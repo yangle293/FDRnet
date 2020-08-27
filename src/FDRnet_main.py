@@ -21,14 +21,13 @@ def get_parser():
     parser.add_argument('-iel','--input_edge_list',type=str,required=True,help='Input edge list file name')
     parser.add_argument('-igl','--input_gene_lfdr',type=str,required=True,help='Input gene local FDRs')
     parser.add_argument('-ofn','--output_file_name',type=str,required=True,help='File name of output')
-    parser.add_argument('-se','--seed',type=str,required=False,default='all',help='Seed gene name')
+    parser.add_argument('-se','--seed',type=str,required=True,default='all',help='Seed gene name')
     parser.add_argument('-sm','--sort_method',type=str,required=False,default='neighbor',help='Seed sort method')
     parser.add_argument('-bd','--bound',type=float,required=False,default='0.1',help='FDR bound')
     parser.add_argument('-al','--alpha',type=float,required=False,default=0.85,help='Random walk parameter')
     parser.add_argument('-sz','--size',type=int,required=False,default=400,help='Local graph size')
     parser.add_argument('-tl','--time_limit',type=int,required=False,default=100,help='Time limit for each seed')
     parser.add_argument('-rg','--relative_gap',type=float,required=False,default=0.01,help='Relative gap in MILP')
-    parser.add_argument('-esr','--edge_seed_remove',type=float,required=False,default=1,help='Remove the subnetwork when its seed is on the edge')
     return parser
 
 
