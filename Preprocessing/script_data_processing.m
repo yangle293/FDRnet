@@ -79,21 +79,11 @@ Expr_raw_data = Expr_raw_data(:,IB);
 % v3:   2.5% (2)         max/10             5
 % v4:   2.5% (2)         max/5               5
 
-paraset = {1.64,@(x) max(x)/10,'poly5';
-                1.64,@(x) max(x)/5,'poly5';
-                2,@(x) max(x)/10,'poly5';
-                2,@(x) 5*max(x)/max(x),'poly7';
-                2,@(x) 4*max(x)/max(x),'poly7';
-                2,@(x) 3*max(x)/max(x),'poly7';
-                1.64,@(x) max(x)/30,'poly5'};
+paraset = {2,@(x) 5*max(x)/max(x),'poly7'};
 
-
-
-for k = 4:4%size(paraset,1)
-%% 
-filter_multiplier = paraset{k,1};
-null_thres_func = paraset{k,2};
-poisson_deg = paraset{k,3};
+filter_multiplier = paraset{1};
+null_thres_func = paraset{2};
+poisson_deg = paraset{3};
 
 
 %%%%% Filter the CNV data
@@ -126,8 +116,8 @@ boldify1
 set(gca,'fontsize',18);axis square;set(gca,'ytick',[-2,-1,0,1,2]);h1.LineWidth = 1;
 h2.LineWidth = 1;h3.LineWidth = 1;h4.LineWidth = 3;
 keyboard
-savefig(['./amp_event_v',num2str(k),'.fig'])
-print(['./amp_event_v',num2str(k),'.eps'],'-depsc')
+savefig(['./amp_event.fig'])
+print(['./amp_event.eps'],'-depsc')
 close all
 
 % del
@@ -149,8 +139,8 @@ boldify1
 set(gca,'fontsize',18);axis square;set(gca,'ytick',[-2,-1,0,1,2]);h1.LineWidth = 1;
 h2.LineWidth = 1;h3.LineWidth = 1;h4.LineWidth = 3;
 keyboard
-savefig(['./del_event_v',num2str(k),'.fig'])
-print(['./del_event_v',num2str(k),'.eps'],'-depsc')
+savefig(['./del_event.fig'])
+print(['./del_event.eps'],'-depsc')
 close all
 keyboard
 %%%% PLOT END %%%%
@@ -290,19 +280,18 @@ mut_res = table(GeneMutation,p_mutation,q_mutation,lfdr_mutation,'VariableNames'
 mut_res = sortrows(mut_res,{'p'},'ascend');
 %% save results
 keyboard
-writetable(full_res,['BRCA_v',num2str(k),'_result_merged.xlsx']);
+writetable(full_res,['BRCA__result_merged.xlsx']);
 amp_res = table(CNVgene(:,1),ob_stat_amp,pvalue_amp,qvalue_amp, lfdr_amp,'VariableNames',...
     {'gene','count','pvalue','qvalue','locfdr'});
 amp_res = sortrows(amp_res,'count','descend');
-% writetable(amp_res,['BRCA_v',num2str(k),'_CNV_amp.xlsx'])
+
 del_res = table(CNVgene(:,1),ob_stat_del,pvalue_del,qvalue_del,lfdr_del,'VariableNames',...
     {'gene','count','pvalue','qvalue','locfdr'});
 del_res = sortrows(del_res,'count','descend');
-% writetable(del_res,'BRCA_new_CNV_del.xlsx')
-save(['BRCA_v',num2str(k),'_CNV_amp.mat'],'amp_res')
-save(['BRCA_v',num2str(k),'_CNV_del.mat'],'del_res')
-save(['BRCA_v',num2str(k),'_mutation.mat'],'mut_res')
 
-end
+save(['BRCA_CNV_amp.mat'],'amp_res')
+save(['BRCA_CNV_del.mat'],'del_res')
+save(['BRCA_mutation.mat'],'mut_res')
+
 
 %%
