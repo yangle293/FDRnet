@@ -86,24 +86,28 @@ The output file is a .csv file organized as follows:
     -rg            Relative gap in MILP problem, default 0.01
     
 ### Examples
-We provide three files in the `example` directory: an index-to-gene file `irefindex9_index_gene`, an edge list file `irefindex9_edge_list` of the iRefIndex9.0 PPI network, and a gene-to-score file `BRCA_fdr.txt` calculated from TCGA breast cancer data. 
+We provide three files in the `example` directory: an index-to-gene file `irefindex9_index_gene`, an edge list file `irefindex9_edge_list` of the iRefIndex9.0 PPI network, and a gene-to-score file (p-value) `TCGA_BRCA_SNV.txt` extracted from MutSig2CV results of TCGA breast cancer data. 
+
+We can calculate the local FDRs from p-values by running the following code:
+
+    python example/locfdr_compute.py example/TCGA_BRCA_SNV.txt
 
 We can identify a subnetwork around PSMB3 gene by running the following code:
 
-    python src/FDRnet_main.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl example/BRCA_fdr.txt -ofn example/test.csv -se PSMB3
+    python src/FDRnet_main.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl example/TCGA_BRCA_SNV_lfdr.txt -ofn example/test.csv -se TP53
 
 The output file should be:
 
 | Seed Gene | Running Time  | Optimization Status | Subnetwork|
 |:-------:|:-------:|:-----:|:------:|
-| PSMB3	|3.27636814117	| MIP_optimal	|PSMD11 PSMD12 CDC6 PSMD3 PSMC4 PSMC5 VDAC3 PSMB4 PSMB3|
+| TP53	|3.54608988762	| MIP_optimal	|SP3 PTEN IRF9 GPS2 TP53 NCOR1|
 
 We also provide a simple script `plot_subnetworks.py` to visualize the identified subnetwork. The input is the three files in the `example` directory and the output file from above. For example, we can visualize the subnetwork around PSMB3 by running the code:
 
-    python src/plot_subnetworks.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl     example/BRCA_fdr.txt -ofn example/test.csv
+    python src/plot_subnetworks.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl     example/TCGA_BRCA_SNV_lfdr.txt -ofn example/test.csv
 
 The result should be:
-![alt text](https://github.com/yangle293/FDRnet/blob/master/example/seed_PSMB3.png)
+![alt text](https://github.com/yangle293/FDRnet/blob/master/example/seed_TP53.png)
 ## Additional information
 ### Support
 Please send us an email if you meet any problem in using FDRnet.
