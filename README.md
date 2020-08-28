@@ -94,7 +94,7 @@ We can calculate the local FDRs from p-values by running the following code:
 
     python example/locfdr_compute.py example/TCGA_BRCA_SNV.txt
 
-We can identify a subnetwork around PSMB3 gene by running the following code:
+We can identify a subnetwork around TP53 gene by running the following code:
 
     python src/FDRnet_main.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl example/TCGA_BRCA_SNV_lfdr.txt -ofn example/test.csv -se TP53
 
