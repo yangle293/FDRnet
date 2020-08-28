@@ -52,13 +52,15 @@ This file associates each gene with a local FDR score:
     A 0.5
     B 0.2
     
-If you have a p-value for each gene, we provide a wrapper function to calculate the local FDRs in `locfdr-python` directory using the [`locfdr-python`](https://github.com/leekgroup/locfdr-python) package implemented in Python. Or if you are familiar with R, you can use the original `locfdr` package: http://cran.r-project.org/web/packages/locfdr/.
+If you have a p-value for each gene, either you can calculate local FDRs using the original `locfdr` R package: http://cran.r-project.org/web/packages/locfdr/, or you can use the python-implementation of `locfdr` algorithm (https://github.com/leekgroup/locfdr-python). We provide a copy of the python implementation (`locfdr-python`) and a wrapper function `locfdr_compute.py` for ease of usage. 
+
 ### Running
-1. Compute local FDRs by running `locfdr/locfdr_compute.py` script.
+1. Compute local FDRs by running `example/locfdr_compute.py` script.
 
 2. Run FDRnet by running `src/FDRnet_main.py` script. 
 
 See the `Examples` section for a full minimal working example of FDRnet.
+
 ### Output
 The output file is a .csv file organized as follows:
 
