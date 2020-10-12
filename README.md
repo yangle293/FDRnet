@@ -94,7 +94,7 @@ We can calculate the local FDRs from p-values by running the following code:
 
     python example/locfdr_compute.py example/TCGA_BRCA_SNV.txt
 
-We can identify a subnetwork around TP53 gene by running the following code:
+There are two ways to use our algorithm. First, users can try to identify a subnetwork around any gene regardless of its local FDR score by using `-se gene_name` option (possible no solution) to show a local picture of perturbation. Second, users can obtain a landscape of all perturbed regions in the whole network by using `-se all` as shown in our paper. Running with this option will return a set of significantly perturbed subnetworks around all the seeds (a gene has local FDR score less than the given bound B). See the supplemental information of our paper for details. Here, we use the famous cancer gene TP53 as an example, that is, we can identify a subnetwork around TP53 gene by running the following code:
 
     python src/FDRnet_main.py -igi example/irefindex9_index_gene -iel example/irefindex9_edge_list -igl example/TCGA_BRCA_SNV_lfdr.txt -ofn example/test.csv -se TP53
 
@@ -111,6 +111,8 @@ We also provide a simple script `plot_subnetworks.py` to visualize the identifie
 The result should be:
 ![alt text](https://github.com/yangle293/FDRnet/blob/master/example/seed_TP53.png)
 ## Additional information
+### Reproducibility
+The `simulation` directory includes the files and codes used to generate synthetic data and plot figures in the paper. The `preprocessing` directory includes the preprocessing scripts used in the Breast cancer study and Lymphoma study. The code for plotting results for breast cancer and Lymphoma studies is similar to that of simulation.
 ### Support
 Please send us an email if you meet any problem in using FDRnet.
 ### License
