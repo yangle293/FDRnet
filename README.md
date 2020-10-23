@@ -1,4 +1,4 @@
-# FDRnet
+# FDRnet 1.0.0 [![DOI](https://zenodo.org/badge/196633557.svg)](https://zenodo.org/badge/latestdoi/196633557)
 FDRnet is a method for identifying significantly mutated (or differentially expressed) subnetworks in human diseases. 
 
 ## Setup
@@ -120,5 +120,3 @@ See `LICENSE.txt` for license information.
 ### Citation
 If you use FDRnet in your work, please cite the following manuscript:
 L. Yang, R. Chen, S. Goodison, Y. Sun. A novel method to identify significantly mutated subnetworks in cancer, <em>Nature Computational Science</em>, 2020.
-### Version
-FDRnet 1.0.0 [![DOI](https://zenodo.org/badge/196633557.svg)](https://zenodo.org/badge/latestdoi/196633557)
