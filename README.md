@@ -119,4 +119,4 @@ Please send us an email if you have any question when using FDRnet.
 See `LICENSE.txt` for license information.
 ### Citation
 If you use FDRnet in your work, please cite the following manuscript:
-L. Yang, R. Chen, S. Goodison, Y. Sun. A novel method to identify significantly mutated subnetworks in cancer, <em>Nature Computational Science</em>, 2020.
+L. Yang, R. Chen, S. Goodison, Y. Sun. An efficient and effective method to identify significantly perturbed subnetworks in cancer, <em>Nature Computational Science</em>, 1, pages 79–88 (2021).
